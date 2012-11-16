@@ -3,5 +3,15 @@
 
 <% @poll.questions.each do |question| %>
   <p><%= question.title %></p>
-  
+  <div class="row collapse">
+    <div class="columns">
+      <%= form_for Answer.new, class: "form", remote: true do |f| %>
+      <%= f.text_field :content %>
+    </div>
+    <div class="columns">
+      <%= f.submit "Submit", :class => "button expand postfix" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
+

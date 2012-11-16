@@ -8,14 +8,20 @@
       </div>
       <div class="content">
         <p><%= poll.author %></p>
-        <p>(responses, total responses, button to respond)</p>
+        <row>
+          <span class="stats">
+            <%= "#{poll.questions.count}"%>
+          </span>
+          questions 
+          <span class="stats">
+            <%= "#{42}"%>
+          </div> 
+          responses
+        </row>
       </div>
     <% end %>
   </li>
 </ul>
-
-
-
 
 
 
