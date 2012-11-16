@@ -1,8 +1,14 @@
 Pollster::Application.routes.draw do
 
-  resources :polls
-
+  resources :polls do
+    member do
+      get 'results'
+    end
+  end
+  
   resources :answers
+  
+
 
   root :to => 'polls#index'
 

@@ -8,7 +8,8 @@
       <p><%= poll.author %></p>
       <row>
       <%= "#{poll.questions.count} #{poll.questions.count}"%>
-      <%= link_to "Vote", 'polls#show', class: "button" %>
+      <%= link_to "Vote", poll, class: "button" %>
+      <%= link_to "Results", results_poll_path(poll.id), class: "secondary button" %>
       </row>
     </div>
   </li>

@@ -16,8 +16,6 @@ class PollsController < ApplicationController
     end
   end
 
-
-
   def create
     @poll = Poll.new(params[:poll])
     @poll.save
@@ -25,4 +23,7 @@ class PollsController < ApplicationController
     redirect_to polls_path
   end
 
+  def results
+    @poll = Poll.find(params[:id])
+  end
 end
