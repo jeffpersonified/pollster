@@ -4,12 +4,12 @@ class PollsController < ApplicationController
     @polls = Poll.all
   end
 
-
+  def show
+    @poll = Poll.find(params[:id])
+  end
 
   def new
     @poll = Poll.new
-    
-    @poll.save
 
     3.times do 
       question = @poll.questions.build

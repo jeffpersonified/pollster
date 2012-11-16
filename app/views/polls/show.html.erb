@@ -1,0 +1,7 @@
+<!-- poll title, questions, response field -->
+<h1><%= @poll.title %></h1>
+
+<% @poll.questions.each do |question| %>
+  <p><%= question.title %></p>
+  
+<% end %>

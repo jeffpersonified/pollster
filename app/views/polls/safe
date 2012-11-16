@@ -1,0 +1,35 @@
+safe
+<% @poll.questions.each do | question | %>
+
+
+
+
+
+
+
+<%= f.fields_for :questions do |builder| %>
+  <%= render "questions_fields", :f => builder %>
+<% end %>
+
+
+
+
+  <h3><%= question.title %><h3>
+    <p>
+      <%= question.label :content, "Answer" %>
+      <%= question.text_field :content %>
+    </p>
+<% end %>
+
+
+<%= form_for @poll do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= f.fields_for :questions do |builder| %>
+    <%= render "question_fields", :f => builder %>
+  <% end %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
