@@ -5,11 +5,14 @@ class PollsController < ApplicationController
   end
 
   def new
+    @poll = Poll.new
   end
 
   def create
-    @poll = Poll.new
+    @poll = Poll.new(params[:poll])
     @poll.save
+    
+    redirect_to polls_path
   end
 
 end

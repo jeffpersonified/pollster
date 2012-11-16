@@ -1,6 +1,30 @@
 <h1>Polls</h1>
-<% @polls.each do |poll| %>
-  <div class="row">
-    <%= poll.title %>
-  </div>
-<% end %>
+<ul class="accordion">
+  <li class="active">
+    <% @polls.each do |poll| %>
+      <div class="title">
+        <h5><%= poll.title %></h5>
+      </div>
+      <div class="content">
+        <p>(author, responses, total responses, button to respond)</p>
+      </div>
+    <% end %>
+  </li>
+</ul>
+
+<%= button_to 'New Poll', new_poll_path, :method => :get,  :class => 'button new_poll' %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

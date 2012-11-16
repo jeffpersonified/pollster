@@ -1,0 +1,19 @@
+<%= form_for(@poll) do |f| %>
+
+  <div class="field">
+    <form>
+    <%= f.label :title, :class => "left inline" %>
+    <%= f.text_field :title, :class => "twelve" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author, :class => "left inline"  %>
+    <%= f.text_field :author, :class => "twelve"  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add poll", :class => "button" %>
+  </div>
+
+
+<% end %>
