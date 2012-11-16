@@ -2,8 +2,6 @@ Pollster::Application.routes.draw do
 
   resources :polls
 
-  resources :questions
-
   root :to => 'polls#index'
 
   # The priority is based upon order of creation:

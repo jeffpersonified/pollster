@@ -11,6 +11,10 @@
     <%= f.text_field :author, :class => "twelve"  %>
   </div>
 
+  <%= f.fields_for :questions do |builder| %>
+    <%= render "questions_fields", :f => builder %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Add poll", :class => "button" %>
   </div>

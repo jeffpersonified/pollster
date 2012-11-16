@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20121116005934) do
 
   create_table "questions", :force => true do |t|
     t.string   "title"
+    t.integer  "poll_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
