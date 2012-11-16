@@ -10,10 +10,12 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
+    @question = @poll.questions.build
 
-    3.times do 
-      question = @poll.questions.build
-    end
+    # 3.times do 
+    #   question = @poll.questions.build
+    # end
+
   end
 
   def create
@@ -27,3 +29,10 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
   end
 end
+
+
+# add button to add questions
+# add define question types
+# add different answer fields depending on types
+# debug why questions can only be answered once
+# add admin pages
