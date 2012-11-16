@@ -2,26 +2,20 @@
 <%= button_to 'New Poll', new_poll_path, :method => :get,  :class => 'button new_poll' %>
 <ul class="accordion">
   <li class="active">
-    <% @polls.each do |poll| %>
-      <div class="title">
-        <h5><%= poll.title %></h5>
-      </div>
-      <div class="content">
-        <p><%= poll.author %></p>
-        <row>
-          <span class="stats">
-            <%= "#{poll.questions.count}"%>
-          </span>
-          questions 
-          <span class="stats">
-            <%= "#{42}"%>
-          </div> 
-          responses
-        </row>
-      </div>
-    <% end %>
+  <% @polls.each do |poll| %>
+    <div class="title">
+      <h5><%= poll.title %></h5>
+      <p><%= poll.author %></p>
+      <row>
+      <%= "#{poll.questions.count} #{poll.questions.count}"%>
+      <%= link_to "Vote", 'polls#show', class: "button" %>
+      </row>
+    </div>
   </li>
+  <% end %>
 </ul>
+
+
 
 
 
