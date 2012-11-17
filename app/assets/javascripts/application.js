@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require add_field.js
 //= require_tree .
