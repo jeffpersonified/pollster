@@ -1,0 +1,29 @@
+<h1>New Poll</h1>
+
+<%= form_for(@poll) do |f| %>
+
+  <div class="field">
+    <%= f.label :title, :class => "left inline" %>
+    <%= f.text_field :title, :class => "twelve" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author, :class => "left inline"  %>
+    <%= f.text_field :author, :class => "twelve"  %>
+  </div>
+
+  <%= f.fields_for :questions do |builder| %>
+    <%= render "questions_fields", :f => builder %>
+  <% end %>
+
+  <p><%= link_to "Add multiple choice question", :class => "button" %></p>
+  <p><%= link_to "Add open ended question", :class => "button" %></p>
+
+  <div class="actions">
+    <%= f.submit "Add poll", :class => "button" %>
+  </div>
+
+<% end %>
+
+
+<%= link_to 'Back', polls_path %>
