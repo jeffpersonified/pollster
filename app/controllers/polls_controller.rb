@@ -10,11 +10,12 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
-    # @question = @poll.questions.build
+    
+    @question = @poll.questions.build
 
-    3.times do
-      question = @poll.questions.build
-    end
+    # 3.times do
+    #   question = @poll.questions.build
+    # end
 
   end
 
@@ -47,6 +48,7 @@ end
 # add define question types
 # add different answer fields depending on types
 # add admin pages
+# add validations
 
 
 

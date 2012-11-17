@@ -7,7 +7,7 @@
       <h5><%= poll.title %></h5>
       <p><%= poll.author %></p>
       <row>
-      <%= "#{poll.questions.count} questions     responses"%>
+      <%= "#{poll.questions.count} questions    # responses"%>
       <%= link_to "Vote", poll, class: "button" %>
       <%= link_to "Results", results_poll_path(poll.id), class: "secondary button" %>
       </row>

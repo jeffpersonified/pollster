@@ -1,5 +1,3 @@
-require 'set'
-
 class AnswersController < ApplicationController
 
   def create

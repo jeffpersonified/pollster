@@ -14,9 +14,11 @@
     <%= render "questions_fields", :f => builder %>
   <% end %>
 
+  <p><%= link_to "Add multiple choice question", :class => "button" %></p>
+  <p><%= link_to "Add open ended question", :class => "button" %></p>
+
   <div class="actions">
     <%= f.submit "Add poll", :class => "button" %>
   </div>
-
 
 <% end %>
