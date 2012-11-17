@@ -2,7 +2,7 @@
 <h1><%= @poll.title %></h1>
 
 <% @poll.questions.each do |question| %>
-  <% if session[:answered_questions] && !session[:answered_questions].include?(question.id) %>
+  <% unless already_answered?(question) %>
     <p><%= question.title %></p>
     <div class="row collapse">
       <div class="columns">
@@ -18,7 +18,7 @@
   <% end %>
 <% end %>
 
-<% if session[:answered_questions] && session[:answered_questions].include?(@poll.questions.last.id) %>
+<% if already_answered? @poll.questions.last %>
   <div>You've answered this poll</div>
 <% end %>
 
