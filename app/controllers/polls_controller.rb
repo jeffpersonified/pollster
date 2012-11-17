@@ -58,7 +58,7 @@ end
 # add different answer fields depending on types
 # add admin pages
 # add validations
-
+# if no questions, destroy poll (or show an error page)
 
 
 

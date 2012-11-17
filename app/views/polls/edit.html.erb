@@ -13,14 +13,14 @@
   </div>
 
   <%= f.fields_for :questions do |builder| %>
-    <%= render "questions_fields", :f => builder %>
+    <%= render "questions_fields_edit", :f => builder %>
   <% end %>
 
   <p><%= link_to "Add multiple choice question", :class => "button" %></p>
   <p><%= link_to "Add open ended question", :class => "button" %></p>
 
   <div class="actions">
-    <%= f.submit "Add poll", :class => "button" %>
+    <%= f.submit "Update poll", :class => "button" %>
   </div>
 
 <% end %>
