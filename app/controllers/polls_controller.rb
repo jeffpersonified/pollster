@@ -10,29 +10,56 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
-    @question = @poll.questions.build
+    # @question = @poll.questions.build
 
-    # 3.times do 
-    #   question = @poll.questions.build
-    # end
+    3.times do
+      question = @poll.questions.build
+    end
 
   end
 
   def create
     @poll = Poll.new(params[:poll])
     @poll.save
-    
+
     redirect_to polls_path
   end
 
   def results
     @poll = Poll.find(params[:id])
   end
+
+
+  def vote_count poll
+    poll.questions.count
+  end
+
+  def question_count
+
+  end
+
+
+
 end
 
 
 # add button to add questions
 # add define question types
 # add different answer fields depending on types
-# debug why questions can only be answered once
 # add admin pages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
