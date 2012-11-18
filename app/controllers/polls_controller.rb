@@ -56,9 +56,13 @@ end
 # add button to add questions
 # add define question types
 # add different answer fields depending on types
+# not showing all questions in vote after adding remove tag
 # add admin pages
+# add author to answers
 # add validations
 # if no questions, destroy poll (or show an error page)
+# add poll editing index for admin (last addition)
+# add notices for delete and add
 
 
 

@@ -2,7 +2,7 @@
 <% @poll.questions.each do |question| %>
   <h4><%= question.title %></h4>
   <% question.answers.each do |answer| %>
-  <p><%= answer.content %><p>
+    <p><%= answer.content %><p>
   <% end %>
 <% end %>
 <%= link_to "Pollster Home", "/", :class => "secondary button" %>
