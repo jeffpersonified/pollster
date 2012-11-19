@@ -4,12 +4,23 @@
 <% @poll.questions.each do |question| %>
   <% unless already_answered?(question) %>
     <p><%= question.title %></p>
+      
+
+    <ul>
+      <% @poll.errors.each_with_index do |msg, i| %>
+        <li><%= msg[1] %></li>
+      <% end %>
+    </ul>
+
+
     <div class="row collapse">
+
       <div class="columns">
         <%= form_for question.answers.new, class: "form" do |f| %>
         <%= f.hidden_field :question_id %>
         <%= f.text_field :content %>
       </div>
+
       <div class="columns">
         <%= f.submit "Submit", :class => "button expand postfix" %>
         <% end %>
@@ -19,7 +30,7 @@
 <% end %>
 
 <% if already_answered? @poll.questions.last %>
-  <div>You've answered this poll</div>
+  <div>You've answered this poll. See the results <%= link_to "here!", results_poll_path %></div>
 <% end %>
 
 <%= link_to "View Results", results_poll_path, :class => "button" %>
