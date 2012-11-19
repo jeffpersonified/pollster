@@ -28,6 +28,7 @@
   <div>You've answered this poll. See the results <%= link_to "here!", results_poll_path %></div>
 <% end %>
 
-<%= link_to "View Results", results_poll_path, :class => "button" %>
-<%= link_to "Pollster Home", "/", :class => "secondary button" %>
+<%= link_to "Pollster Home", "/", :class => "secondary button", :id => "new_poll" %>
+<%= link_to "View Results", results_poll_path, :class => "button", :id => "full_width" %>
+
 

@@ -2,12 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.header{
+.header {
   text-align: center;
   margin-top: 50px;
 }
 
-.new_poll{
-  margin: 0 auto;
+#new_poll {
+  width: 100%;
+}
+
+.count {
+  font-size: 1.2em;
+}
+
+#full_width {
   width: 100%;
 }

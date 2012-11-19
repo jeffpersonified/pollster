@@ -20,10 +20,10 @@
     <%= render "questions_fields", :f => builder %>
   <% end %>
 
-  <p><%= link_to_add_fields "Add Question", f, :questions %></p>
+  <p><%= link_to_add_fields "Add Question", f, :questions  %></p>
 
   <div class="actions">
-    <%= f.submit "Add poll", :class => "button" %>
+    <%= f.submit "Add poll", :class => "button", :id => "new_poll" %>
   </div>
 
 <% end %>
