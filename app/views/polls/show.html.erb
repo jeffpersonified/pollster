@@ -1,4 +1,3 @@
-<!-- poll title, questions, response field -->
 <h1><%= @poll.title %></h1>
 
 <% @poll.questions.each do |question| %>
@@ -6,11 +5,7 @@
     <p><%= question.title %></p>
       
 
-    <ul>
-      <% @poll.errors.each_with_index do |msg, i| %>
-        <li><%= msg[1] %></li>
-      <% end %>
-    </ul>
+
 
 
     <div class="row collapse">
