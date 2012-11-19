@@ -1,5 +1,11 @@
 <%= form_for(@poll) do |f| %>
 
+  <ul>
+    <% @poll.errors.each_with_index do |msg, i| %>
+    <li><%= msg[1] %></li>
+    <% end %>
+  </ul>
+
   <div class="field">
     <%= f.label :title, :class => "left inline" %>
     <%= f.text_field :title, :class => "twelve" %>
@@ -14,6 +20,8 @@
     <%= render "questions_fields", :f => builder %>
   <% end %>
 
+  <p><%= link_to_add_fields "Add Question", f, :questions %></p>
+  
   <p><%= link_to "Add multiple choice question", :class => "button" %></p>
   <p><%= link_to "Add open ended question", :class => "button" %></p>
 

@@ -22,38 +22,26 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
-  
-    3.times do
-      question = @poll.questions.build
-    end
   end
 
   def create
     @poll = Poll.new(params[:poll])
     @poll.save
 
-    redirect_to polls_path
+    if @poll.save
+      redirect_to polls_path, notice: 'Poll was successfully created.'
+    else
+      render action: "new" 
+    end
   end
 
   def results
     @poll = Poll.find(params[:id])
   end
 
-
-  def vote_count poll
-    poll.questions.count
-  end
-
-  def question_count
-    # don't know why this isn't working
-  end
-
-
-
 end
 
 
-# add button to add questions
 # add define question types
 # add different answer fields depending on types
 # not showing all questions in vote after adding remove tag

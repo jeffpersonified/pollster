@@ -5,7 +5,7 @@
   <% @polls.each do |poll| %>
     <div class="title">
       <h5><%= poll.title %></h5>
-      <p><%= poll.author %></p>
+      <p>Creator: <%= poll.author %></p>
       <row>
       <%= "#{poll.questions.count} questions    # responses"%>
       <%= link_to "Vote", poll, class: "button" %>
