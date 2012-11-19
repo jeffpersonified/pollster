@@ -13,9 +13,13 @@
       
         
         <row>
-          <%= poll.author %> created this poll <%=  distance_of_time_in_words_to_now(poll.created_at.to_date) %> ago<br> 
-        <span class="count"><%= "#{poll.questions.count}" %></span> questions
-
+        <span class="grey">
+          <%= poll.author %> created this poll <%=  distance_of_time_in_words_to_now(poll.created_at.to_date) %> ago
+        </span>
+        <br> 
+        <span class="grey">
+          <span class="count"><%= "#{poll.questions.count}" %></span> questions
+        </span>
         <%= link_to "Vote", poll, class: "small button right" %>
         <%= link_to "Results", results_poll_path(poll.id), class: "secondary small button right" %>
         </row>

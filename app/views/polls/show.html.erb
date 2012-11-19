@@ -1,31 +1,27 @@
-<h1><%= @poll.title %></h1>
+<h3><%= @poll.title %></h3>
 
 <% @poll.questions.each do |question| %>
   <% unless already_answered?(question) %>
     <p><%= question.title %></p>
       
 
-
-
-
     <div class="row collapse">
-
-      <div class="columns">
+      <div class="ten mobile-three columns">
         <%= form_for question.answers.new, class: "form" do |f| %>
         <%= f.hidden_field :question_id %>
         <%= f.text_field :content %>
       </div>
+      <div class="two mobile-one columns">
 
-      <div class="columns">
-        <%= f.submit "Submit", :class => "button expand postfix" %>
-        <% end %>
+            <%= f.submit "Submit", :class => "button expand postfix" %>
+            <% end %>
       </div>
     </div>
   <% end %>
 <% end %>
 
 <% if already_answered? @poll.questions.last %>
-  <div>You've answered this poll. See the results <%= link_to "here!", results_poll_path %></div>
+  <p>You've answered this poll. See the results <%= link_to "here!", results_poll_path %></p>
 <% end %>
 
 <%= link_to "Pollster Home", "/", :class => "secondary button", :id => "new_poll" %>

@@ -9,6 +9,8 @@
 
 #new_poll {
   width: 100%;
+  font-weight: 400;
+  font-size: 17px;
 }
 
 .count {
@@ -21,4 +23,23 @@
 
 #logo {
   color: #1E2020;
+}
+
+.button {
+  font-weight: 400;
+ 
+}
+
+.button.small {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+ul {
+  line-height: 1.6
+}
+
+.grey {
+  color: #6F6F6F;
+  font-weight: 400;
 }

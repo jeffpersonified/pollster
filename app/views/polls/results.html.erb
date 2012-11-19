@@ -1,7 +1,11 @@
-<h1>Results</h1>
+<h3>Results for 
+  <%= @poll.title %>
+</h3>
 
 <% @poll.questions.each do |question| %>
-  <h4><%= question.title %></h4>
+  <hr>
+  <h4 class="subheader"><%= question.title %></h4>
+
   <% question.answers.each do |answer| %>
     <p><%= answer.content %><p>
   <% end %>
